@@ -23,19 +23,19 @@ package main
 import (
     "fmt"
 
-	"github.com/dev-templates/googleauthenticator"
+    "github.com/dev-templates/googleauthenticator"
 )
 
 func main {
     // generate key
-	formattedKey := googleauthenticator.GenerateKey()
-	authenticator := googleauthenticator.NewAuthenticator("issuer", "xxx@gmail.com", formattedKey)
+    formattedKey := googleauthenticator.GenerateKey()
+    authenticator := googleauthenticator.NewAuthenticator("issuer", "xxx@gmail.com", formattedKey)
     // generate uri for show
     uri := authenticator.GenerateTotpUri()
     fmt.Println(uri)
     // verify token
-	passcode := "<from input>"
-	if authenticator.VerifyToken(passcode) {
+    passcode := "<from input>"
+    if authenticator.VerifyToken(passcode) {
         // ok
     }
 }
